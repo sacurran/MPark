@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface EmailSentViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *StartTimerButton;
+@property (weak, nonatomic) IBOutlet UIButton *SendReceipt;
 
 
 @end

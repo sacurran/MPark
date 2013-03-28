@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewParkViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *Commit;
+@interface NewParkViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+{
+    NSArray * lots;
+}
+@property (weak, nonatomic) IBOutlet UIButton * Commit;
+@property (weak, nonatomic) IBOutlet UIPickerView * LotPicker;
+@property (weak, nonatomic) IBOutlet UITextField * NumberBox;
 
 @end

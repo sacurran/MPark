@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AddTimeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *fuckmylife;
 
 @end

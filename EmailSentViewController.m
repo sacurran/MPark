@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Marissa Belcher. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "EmailSentViewController.h"
 
-@interface ViewController ()
+@interface EmailSentViewController ()
 
 @end
 
-@implementation ViewController
+@implementation EmailSentViewController
 
 - (void)viewDidLoad
 {
