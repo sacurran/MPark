@@ -9,6 +9,17 @@
 #import <UIKit/UIKit.h>
 
 @interface AddTimeViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *fuckmylife;
+{
+    NSDate * paidThrough;
+    float timeAdded;
+    float amountOwed;
+}
+
+@property (weak, nonatomic) IBOutlet UILabel *ParkingLotLabel;
+@property (weak, nonatomic) IBOutlet UILabel *SpotNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *PaidThroughLabel;
+@property (weak, nonatomic) IBOutlet UILabel *AmountOwedLabel;
+@property (weak, nonatomic) IBOutlet UIStepper *Stepper;
+- (IBAction)stepperValueChanged:(id)sender;
 
 @end

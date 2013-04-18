@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewParkViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+@interface NewParkViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 {
+    CGFloat animatedDistance;
     NSArray * lots;
 }
 @property (weak, nonatomic) IBOutlet UIButton * Commit;
 @property (weak, nonatomic) IBOutlet UIPickerView * LotPicker;
 @property (weak, nonatomic) IBOutlet UITextField * NumberBox;
+- (IBAction)editingDidBegin:(id)sender;
+- (IBAction)editingDidEnd:(id)sender;
 
 @end
