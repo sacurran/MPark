@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Database.h"
+#import "Forwarding.h"
 
 @interface AddTimeViewController : UIViewController
 {
+    Database * d;
     NSDate * paidThrough;
     float timeAdded;
     float amountOwed;

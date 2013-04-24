@@ -8,11 +8,14 @@
 
 #import "AppDelegate.h"
 
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+[Parse setApplicationId:@"PUqDsM7dG0mc5qW7encJPSBpHWFOtY6XL3hFi71o"
+clientKey:@"tXYIjuLhbp3V4bIll4oWmMJWvhEik2iXZL0BR4ul"];
     return YES;
 }
 							

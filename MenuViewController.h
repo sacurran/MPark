@@ -11,5 +11,6 @@
 @interface MenuViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *NewPark;
 @property (weak, nonatomic) IBOutlet UIButton *AddTime;
+@property (weak, nonatomic) IBOutlet UIButton *Settings;
 
 @end

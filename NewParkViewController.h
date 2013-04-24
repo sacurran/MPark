@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Database.h"
+#import "Forwarding.h"
 
 @interface NewParkViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 {
+    Database * d;
     CGFloat animatedDistance;
     NSArray * lots;
 }
@@ -18,5 +21,5 @@
 @property (weak, nonatomic) IBOutlet UITextField * NumberBox;
 - (IBAction)editingDidBegin:(id)sender;
 - (IBAction)editingDidEnd:(id)sender;
-
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender;
 @end

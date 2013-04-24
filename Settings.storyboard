@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="-179" y="-1038"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="fBY-jN-R7n">
             <objects>
-                <viewController id="zmY-uw-uCF" sceneMemberID="viewController">
+                <viewController id="zmY-uw-uCF" customClass="SettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AB5-cK-LHd">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

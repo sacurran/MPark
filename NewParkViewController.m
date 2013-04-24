@@ -33,7 +33,8 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-     lots = [[NSArray alloc] initWithObjects:@"Lot1", @"Lot2", @"Lot3", @"Lot4", @"Lot5", nil];
+    d=[[Database alloc] init];
+    lots = [d GetLots];
     self.NumberBox.keyboardType=UIKeyboardTypeNumbersAndPunctuation;
     self.NumberBox.delegate=self;
 }
@@ -131,6 +132,23 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    int row = [_LotPicker selectedRowInComponent:0];
+    NSString *testLot=lots[row];
+    NSString *testSpot=_NumberBox.text;
+    if ( [testSpot intValue]) {
+        int value=[testSpot intValue];
+        if([d LotExists:testLot andCurSpace:value])
+        {
+            [Forwarding SetCurrentNumber:value];
+            [Forwarding SetCurrentLot:testLot];
+            return YES;
+        }
+    }
+    return NO;
 }
 
 @end

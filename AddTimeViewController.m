@@ -29,15 +29,16 @@ static float pricePerMinute=1.4/60;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    d=[[Database alloc] init];
     
-    //TODO: Get from database
-    paidThrough=[NSDate date];
+    NSString * lotName=[Forwarding currentLot];
+    int parkingSpot=[Forwarding currentNumber];
+
+    paidThrough=[d GetPaidDate:lotName andCurSpace:parkingSpot];
+    
     amountOwed=0;
     timeAdded=0;
     
-    //TODO: Get from model
-    NSString * lotName=@"Lot 1";
-    int parkingSpot=2;
     
     self.ParkingLotLabel.text=lotName;
     self.SpotNumberLabel.text=[[NSNumber numberWithInt:parkingSpot] stringValue];
@@ -50,12 +51,12 @@ static float pricePerMinute=1.4/60;
     self.Stepper.continuous = YES;
     amountOwed=pricePerMinute*self.Stepper.value;
     timeAdded=self.Stepper.value;
-    NSDate * newDate =[paidThrough dateByAddingTimeInterval:timeAdded*60];
     
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     dateFormatter.dateFormat = @"MM/dd/yy HH:mm:ss";
-    self.PaidThroughLabel.text=[dateFormatter stringFromDate: newDate];
+    NSString* paidThroughString=[dateFormatter stringFromDate: paidThrough];
+    self.PaidThroughLabel.text=paidThroughString;
     NSNumber * aO=[NSNumber numberWithFloat:amountOwed];
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
