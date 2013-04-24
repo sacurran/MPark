@@ -28,7 +28,7 @@
 //Works!!!
 -(NSArray*)GetLots;
 {
-    NSArray *Lots = [NSArray arrayWithObjects:@"Cooley",@"Music School",@"BBB",@"Stamps",nil];
+    NSArray *Lots = [NSArray arrayWithObjects:@"Cooley",@"BBB",@"Stamps","NAME","NCRB",nil];
     return Lots;
     
 }
