@@ -10,131 +10,132 @@
 
 @implementation Forwarding
 
-static NSString* email=@"";
-static NSString* name=@"";
-static NSString* type=@"";
-static NSString* number=@"";
-static NSString* cvs=@"";
-static NSDate* expire=nil;
-static NSString* zipcode=@"";
-static NSString* defaultLot=@"";
-static NSString* currentLot=@"";
-static int currentNumber=0;
 
 -(id) init
 {
     self=[super init];
+    if(self)
+    {
+        
+    }
     return self;
+}
++(void) set:(NSString*) key:(id) object
+{
+     NSUserDefaults *userDefaults= [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:object forKey:key];
+    [userDefaults synchronize];
 }
 
 + (NSString*) name{
-    return name;
+    return [[NSUserDefaults standardUserDefaults] stringForKey:@"name"];
 }
 
 +(void) SetName:(NSString*) n
 {
-    if (name != n) {
-    	name = [n copy];
-    }
+    [self set:@"name" :n];
 }
 
 + (NSString*) type{
-    return type;
+    return [[NSUserDefaults standardUserDefaults] stringForKey:@"type"];
 }
 
 +(void) SetType:(NSString*) t
 {
-    if (type != t) {
-    	type = [t copy];
-    }
+    [self set:@"type" :t];
 }
+
 + (NSString*) number{
-    return number;
+    return [[NSUserDefaults standardUserDefaults] stringForKey:@"number"];
 }
 
 +(void) SetNumber:(NSString*) n
 {
-    if (number != n) {
-    	number = [n copy];
-    }
+   [self set:@"number" :n];
 }
 + (NSString*) cvs{
-    return cvs;
+    return [[NSUserDefaults standardUserDefaults] stringForKey:@"cvs"];
 }
 
 +(void) SetCvs:(NSString*) c
 {
-    if (cvs != c) {
-    	cvs = [c copy];
-    }
+    [self set:@"cvs" :c];
 }
 + (NSDate*) expire{
-    if(expire==nil)
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"expire"]!=nil)
         return [NSDate date];
     else
-        return expire;
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"expire"];
 }
 
 +(void) SetExpiration:(NSDate*) e
 {
-    if (expire != e) {
-    	expire = [expire copy];
-    }
+    [self set:@"expire" :e];
 }
 + (NSString*) zipcode{
-    return defaultLot;
+    return [[NSUserDefaults standardUserDefaults] stringForKey:@"zipcode"];
 }
 
 +(void) SetZip:(NSString *)z
 {
-    if (zipcode != z) {
-        zipcode= [z copy];
-    }
+    [self set:@"zipcode" :z];
 }
 
 + (NSString*) defaultLot{
-    return defaultLot;
+   return [[NSUserDefaults standardUserDefaults] stringForKey:@"defaultLot"];
 }
 
 +(void) SetDefaultLot:(NSString *)d
 {
-    if (defaultLot != d) {
-         defaultLot= [d copy];
-    }
+    [self set:@"defaultLot" :d];
 }
 
 + (NSString*) email{
    
-    return email;
+    return [[NSUserDefaults standardUserDefaults] stringForKey:@"email"];
 }
 
 +(void) SetEmail:(NSString*) e
 {
-    if (email != e) {
-    	email = [e copy];
-    }
+ [self set:@"email" :e];
 }
 + (NSString*) currentLot{
     
-    return currentLot;
+    return [[NSUserDefaults standardUserDefaults] stringForKey:@"currentLot"];
 }
 
 +(void) SetCurrentLot:(NSString *)l
 {
-    if (currentLot != l) {
-    	currentLot = [l copy];
-    }
+    [self set:@"currentLot":l];
 }
 + (int) currentNumber{
     
-    return currentNumber;
+    return [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentNumber"] intValue];
 }
 
 +(void) SetCurrentNumber:(int)num
 {
-    if (currentNumber != num) {
-    	currentNumber = num;
-    }
+    id var = [NSNumber numberWithInteger: num];
+    [self set:@"currentNumber":var];
+}
++ (float) moneyOwed{
+    
+    return [[NSUserDefaults standardUserDefaults] floatForKey:@"moneyOwed"];
+}
+
++(void) SetMoneyOwed:(float)num
+{
+    id var = [NSNumber numberWithFloat: num];
+    [self set:@"moneyOwed":var];
+}
++ (NSDate*) paidThrough{
+    
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"paidThrough"];
+}
+
++(void) SetPaidThrough:(NSDate*)d
+{
+    [self set:@"paidThrough":d];
 }
 
 

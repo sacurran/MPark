@@ -29,6 +29,7 @@ static float pricePerMinute=1.4/60;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     d=[[Database alloc] init];
     
     NSString * lotName=[Forwarding currentLot];
@@ -82,11 +83,20 @@ static float pricePerMinute=1.4/60;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     dateFormatter.dateFormat = @"MM/dd/yy HH:mm:ss";
     self.PaidThroughLabel.text=[dateFormatter stringFromDate: newDate];
+    
     NSNumber * aO=[NSNumber numberWithFloat:amountOwed];
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     self.AmountOwedLabel.text=[formatter stringFromNumber:aO];
-    
 
+}
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    paidThrough=[paidThrough dateByAddingTimeInterval:timeAdded*60];
+    [d AddPayment:[Forwarding currentLot] andCurSpace:[Forwarding currentNumber] paidThrough:paidThrough];
+    [Forwarding SetMoneyOwed:amountOwed];
+    [Forwarding SetPaidThrough:paidThrough];
+    //Charge amount owed to credit card
+    return YES;
 }
 @end

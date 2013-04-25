@@ -9,19 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface Forwarding : UIViewController
-{}
-    - (id) init;
+{
+}
+- (id) init;
++(void) set:(NSString*) key:(id) object;
 
-//extern NSString* email;
-//extern NSString* name;
-//extern NSString* type;
-//extern NSString* number;
-//extern NSString* cvs;
-//extern NSDate* expire;
-//extern NSString* zipcode;
-//extern NSString* defaultLot;
-//extern NSString* currentLot;
-//extern int currentNumber;
 
     + (NSString*) defaultLot;
     + (void) SetDefaultLot:(NSString*) d;
@@ -43,6 +35,9 @@
     + (void)SetCurrentLot:(NSString*)l;
     + (int)currentNumber;
     + (void)SetCurrentNumber:(int)num;
-
++ (float) moneyOwed;
++(void) SetMoneyOwed:(float)num;
++(NSDate*) paidThrough;
++(void) SetPaidThrough:(NSDate*)d;
 
 @end

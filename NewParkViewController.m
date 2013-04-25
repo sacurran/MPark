@@ -33,8 +33,11 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     d=[[Database alloc] init];
     lots = [d GetLots];
+    NSUInteger i=[lots indexOfObject:[Forwarding defaultLot]];
+    [_LotPicker selectRow:i inComponent:0 animated:NO];
     self.NumberBox.keyboardType=UIKeyboardTypeNumbersAndPunctuation;
     self.NumberBox.delegate=self;
 }
@@ -148,6 +151,12 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
             return YES;
         }
     }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                    message:@"Invalid Lot and Number combination"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
     return NO;
 }
 

@@ -21,6 +21,8 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
     NSLog(@"Before database init");
     d=[[Database alloc] init];
     NSLog(@"After database init");
@@ -41,8 +43,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     dateFormatter.dateFormat = @"MM/dd/yy";
     _DateLabel.text=[dateFormatter stringFromDate: expire];
-    
-    _Commit.hidden=true;
+
     //Text Fields
     _NameField.text=name;
     _NameField.delegate=self;
@@ -213,65 +214,6 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     
 }
 
-- (IBAction)pressValidate:(id)sender {
-    
-    bool valid=true;
-    name=_NameField.text;
-    number=_NumberField.text;
-    cvs=_CvsField.text;
-    zipcode=_BillingField.text;
-    email=_EmailField.text;
-    if(name==@"")
-    {
-        valid=false;
-    }
-    if(defaultLot==@"")
-    {
-        valid=false;
-    }
-    if(type==@"")
-    {
-        valid=false;
-    }
-    if(cvs.length!=3)
-    {
-        valid=false;
-    }
-    if(zipcode.length!=5)
-    {
-        valid=false;
-    }
-    if(![self validateEmailWithString:email])
-    {
-        valid=false;
-    }
-    if(![self validateCard:number])
-    {
-        valid=false;
-    }
-    if(valid)
-    {
-        [Forwarding SetName:name];
-        [Forwarding SetNumber:number];
-        [Forwarding SetCvs:cvs];
-        [Forwarding SetZip:zipcode];
-        [Forwarding SetDefaultLot:defaultLot];
-        [Forwarding SetType:type];
-        [Forwarding SetExpiration:expire];
-        [Forwarding SetEmail:email];
-        _Commit.hidden=false;
-        _NameField.enabled=false;
-        _NumberField.enabled=false;
-        _CvsField.enabled=false;
-        _LotSelect.enabled=false;
-        _BillingField.enabled=false;
-        _TypeSelect.enabled=false;
-        _ExpirationSelect.enabled=false;
-        _ValidateButton.hidden=true;
-        _EmailField.enabled=false;
-        
-    }
-}
 - (IBAction)touchOutOfKeyboard:(UITextField *)sender {
     
     [sender resignFirstResponder];
@@ -327,11 +269,88 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
         return false;
     
 }
-- (BOOL)validateEmailWithString:(NSString*)email
+- (BOOL)validateEmailWithString
 {
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:email];
+}
+
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    NSMutableArray* errors=[[NSMutableArray alloc] init];
+    bool valid=true;
+    name=_NameField.text;
+    number=_NumberField.text;
+    cvs=_CvsField.text;
+    zipcode=_BillingField.text;
+    email=_EmailField.text;
+    if([name isEqualToString:@""])
+    {
+        [errors addObject:@"Name is blank."];
+        valid=false;
+    }
+    if([number isEqualToString:@""])
+    {
+        [errors addObject:@"Number is blank."];
+        valid=false;
+    }
+    if([defaultLot isEqualToString:@""])
+    {
+        [errors addObject:@"Default lot is blank."];
+        valid=false;
+    }
+    if([type isEqualToString:@""])
+    {
+        [errors addObject:@"Type is blank."];
+        valid=false;
+    }
+    if(cvs.length!=3)
+    {
+        [errors addObject:@"CSV is wrong length. Should be 3."];
+        valid=false;
+    }
+    if(zipcode.length!=5)
+    {
+        [errors addObject:@"Zipcode is wrong length. Should be 5."];
+        valid=false;
+    }
+    if(![self validateEmailWithString])
+    {
+        [errors addObject:@"Invalid email."];
+        valid=false;
+    }
+    if(![self validateCard:number])
+    {
+        [errors addObject:@"Invalid Credit Card Number."];
+        valid=false;
+    }
+    if(valid)
+    {
+        [Forwarding SetName:name];
+        [Forwarding SetNumber:number];
+        [Forwarding SetCvs:cvs];
+        [Forwarding SetZip:zipcode];
+        [Forwarding SetDefaultLot:defaultLot];
+        [Forwarding SetType:type];
+        [Forwarding SetExpiration:expire];
+        [Forwarding SetEmail:email];
+        return YES;
+    }
+    NSMutableString* message=[NSMutableString string];
+    for(NSUInteger i=0;i<errors.count;i++)
+    {
+        [message appendString:[errors objectAtIndex:i]];
+        [message appendString:@"\n"];
+    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Errors"
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    return NO;
+    
 }
 
 

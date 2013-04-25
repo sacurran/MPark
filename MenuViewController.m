@@ -27,6 +27,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES];
+    if([[Forwarding name] isEqualToString:@""])
+    {
+        _AddTime.hidden=true;
+        _NewPark.hidden=true;
+        [_Settings setTitle:@"Please Complete Settings" forState:UIControlStateNormal];
+    }
+    if([[Forwarding currentLot] isEqualToString:@"" ])
+    {
+        _AddTime.hidden=true;
+    }
 	// Do any additional setup after loading the view.
 }
 

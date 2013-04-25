@@ -17,6 +17,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES];
+    _LotLabel.text=[Forwarding currentLot];
+    _SpotLabel.text=[NSString stringWithFormat:@"%i",[Forwarding currentNumber]];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = @"MM/dd/yy HH:mm:ss";
+    _PaidThroughLabel.text=[dateFormatter stringFromDate: [Forwarding paidThrough]];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    _PaymentLabel.text=[formatter stringFromNumber:[NSNumber numberWithFloat:[Forwarding moneyOwed]]];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -26,4 +36,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)sendReceipt:(id)sender {
+    
+}
+- (IBAction)startTimer:(id)sender {
+}
 @end

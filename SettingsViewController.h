@@ -39,7 +39,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *TypeSelect;
 @property (weak, nonatomic) IBOutlet UIButton *LotSelect;
 @property (weak, nonatomic) IBOutlet UIPickerView *LotPicker;
-@property (weak, nonatomic) IBOutlet UIButton *ValidateButton;
 @property (weak, nonatomic) IBOutlet UIPickerView *TypePicker;
 @property (weak, nonatomic) IBOutlet UITextField *EmailField;
 - (IBAction)pressTypeSelect:(id)sender;
@@ -47,8 +46,8 @@
 - (IBAction)pressLotSelect:(id)sender;
 - (IBAction)editingDidBegin:(id)sender;
 - (IBAction)editingDidEnd:(id)sender;
-- (IBAction)pressValidate:(id)sender;
 -(BOOL)validateCard:(NSString *)cardNumber;
-- (BOOL)validateEmailWithString:(NSString*)email;
+- (BOOL)validateEmailWithString;
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender;
 
 @end

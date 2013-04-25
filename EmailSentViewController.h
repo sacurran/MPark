@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Forwarding.h"
 @interface EmailSentViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *StartTimerButton;
+- (IBAction)startTimer:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *SendReceipt;
+- (IBAction)sendReceipt:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *DoneButton;
+@property (weak, nonatomic) IBOutlet UILabel *LotLabel;
+@property (weak, nonatomic) IBOutlet UILabel *SpotLabel;
+@property (weak, nonatomic) IBOutlet UILabel *PaymentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *PaidThroughLabel;
 
 
 @end

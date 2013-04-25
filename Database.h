@@ -25,6 +25,6 @@
 -(NSArray*)GetLots;
 -(BOOL)LotExists:(NSString *)CurLot andCurSpace:(int)CurSpace;
 -(NSDate*)GetPaidDate:(NSString *)CurLot andCurSpace:(int)CurSpace;
--(void)AddPayment:(NSString *)CurLot andCurSpace:(int)CurSpace;
+-(void)AddPayment:(NSString *)CurLot andCurSpace:(int)CurSpace paidThrough:(NSDate*) paidThrough;
 
 @end

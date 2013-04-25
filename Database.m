@@ -28,7 +28,7 @@
 //Works!!!
 -(NSArray*)GetLots;
 {
-    NSArray *Lots = [NSArray arrayWithObjects:@"Cooley",@"BBB",@"Stamps","NAME","NCRB",nil];
+    NSArray *Lots = [NSArray arrayWithObjects:@"Cooley",@"BBB",@"Stamps",@"NAME",@"NCRB",nil];
     return Lots;
     
 }
@@ -58,7 +58,7 @@
 //It Works!!
 -(NSDate*)GetPaidDate:(NSString *)CurLot andCurSpace:(int)CurSpace
 {
-    NSDate *time = @"Jan 00, 0000, 00:00";
+    NSDate *time = [NSDate date];
    
     PFQuery *query = [PFQuery queryWithClassName:@"ParkInfo"];
     [query whereKey:@"lotName" equalTo:CurLot];
@@ -69,7 +69,7 @@
     if (Time == nil)
     {
         NSLog(@"Went in here");
-        time = @"Jan 00, 0000, 00:00";
+        time = [NSDate date];
     }
     
     return time;
@@ -77,12 +77,12 @@
 
 //Adds the current payment of a parking spot.
 //It Works!!!
--(void)AddPayment:(NSString *)CurLot andCurSpace:(int)CurSpace
+-(void)AddPayment:(NSString *)CurLot andCurSpace:(int)CurSpace paidThrough:(NSDate*) paidThrough
 {
     PFObject *parkInfo = [PFObject objectWithClassName:@"ParkInfo"];
     [parkInfo setObject:CurLot forKey:@"lotName"];
     [parkInfo setObject:[NSNumber numberWithInt:CurSpace] forKey:@"spaceNumber"];
-    [parkInfo setObject:[NSDate date] forKey:@"date"];
+    [parkInfo setObject:paidThrough forKey:@"date"];
     [parkInfo saveInBackground];
 }
 

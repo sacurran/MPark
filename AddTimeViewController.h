@@ -24,5 +24,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *AmountOwedLabel;
 @property (weak, nonatomic) IBOutlet UIStepper *Stepper;
 - (IBAction)stepperValueChanged:(id)sender;
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender;
 
 @end
