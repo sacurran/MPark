@@ -29,7 +29,15 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     }
     return self;
 }
-
+-(void) viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+}
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -13,6 +13,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jt-Th-2yn">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="New Park">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -22,7 +23,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="i1w-S3-4dQ" kind="push" id="f54-57-qaL"/>
+                                    <segue destination="i1w-S3-4dQ" kind="custom" customClass="NoAnime" id="f54-57-qaL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhV-Ge-Why">
@@ -35,7 +36,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Bv5-Wa-dpk" kind="push" id="iVE-0H-7Tg"/>
+                                    <segue destination="Bv5-Wa-dpk" kind="custom" customClass="NoAnime" id="iVE-0H-7Tg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agl-3g-mX0">
@@ -48,11 +49,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ONy-3A-Xhm" kind="push" id="7Je-LK-bN1"/>
+                                    <segue destination="ONy-3A-Xhm" kind="custom" customClass="NoAnime" id="7Je-LK-bN1"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="uhV-Ge-Why" secondAttribute="trailing" constant="62" id="1Wb-MS-iSH"/>
                             <constraint firstItem="agl-3g-mX0" firstAttribute="leading" secondItem="daQ-zn-VCi" secondAttribute="leading" constant="40" id="OH3-bB-77X"/>
@@ -71,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Z8-0j-QjN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1017" y="106"/>
+            <point key="canvasLocation" x="641" y="172"/>
         </scene>
         <!--New Park View Controller - New Park-->
         <scene sceneID="bcG-pd-NTg">
@@ -91,7 +92,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Bv5-Wa-dpk" kind="push" id="F2U-bH-qeX"/>
+                                    <segue destination="Bv5-Wa-dpk" kind="custom" customClass="NoAnime" id="F2U-bH-qeX"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJD-sS-zSd">
@@ -150,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Inw-ci-4jB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1448" y="-488"/>
+            <point key="canvasLocation" x="1470" y="-530"/>
         </scene>
         <!--Add Time View Controller - Add Time-->
         <scene sceneID="pTM-nk-QDX">
@@ -205,7 +206,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dDr-7l-o1e" kind="push" id="xMu-bE-0Po"/>
+                                    <segue destination="dDr-7l-o1e" kind="custom" customClass="NoAnime" id="xMu-bE-0Po"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -241,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGm-qM-lFw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1943" y="-33"/>
+            <point key="canvasLocation" x="2823" y="-641"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eI1-bz-Xl3">
@@ -259,7 +260,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyw-94-FVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19" y="157"/>
+            <point key="canvasLocation" x="-1141" y="172"/>
         </scene>
         <!--Email Sent View Controller-->
         <scene sceneID="eI0-IH-e11">
@@ -311,7 +312,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="F4h-Rl-bHY" kind="push" id="vzu-2w-JTN"/>
+                                    <segue destination="F4h-Rl-bHY" kind="custom" customClass="NoAnime" id="Qqz-zu-yIM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Payment Confirmed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRA-nV-xpv">
@@ -384,7 +385,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNj-3L-bbQ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2395" y="-21"/>
+            <point key="canvasLocation" x="3759" y="-77"/>
         </scene>
         <!--Starting View Controller - MPark-->
         <scene sceneID="4Jr-QO-BKv">
@@ -404,7 +405,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="F4h-Rl-bHY" kind="push" id="t1I-NY-IkQ"/>
+                                    <segue destination="F4h-Rl-bHY" kind="custom" customClass="NoAnime" id="t1I-NY-IkQ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ParkingLot.png" translatesAutoresizingMaskIntoConstraints="NO" id="doZ-wE-4eE">
@@ -430,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2wU-T3-dxv" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="485" y="172"/>
+            <point key="canvasLocation" x="-235" y="148"/>
         </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="Zx9-GR-Mkf">
@@ -618,7 +619,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="F4h-Rl-bHY" kind="push" id="zCQ-z4-6xh"/>
+                                    <segue destination="F4h-Rl-bHY" kind="custom" customClass="NoAnime" id="zCQ-z4-6xh"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Da-dw-eXp">
@@ -747,19 +748,100 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kF9-jX-DFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1262" y="967"/>
+            <point key="canvasLocation" x="646" y="1559"/>
         </scene>
     </scenes>
     <resources>
         <image name="ParkingLot.png" width="400" height="375"/>
     </resources>
+    <classes>
+        <class className="AddTimeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddTimeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="stepperValueChanged:"/>
+                <relationship kind="outlet" name="AmountOwedLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="PaidThroughLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ParkingLotLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="SpotNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="Stepper" candidateClass="UIStepper"/>
+            </relationships>
+        </class>
+        <class className="EmailSentViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EmailSentViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sendReceipt:"/>
+                <relationship kind="action" name="startTimer:"/>
+                <relationship kind="outlet" name="DoneButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="LotLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="PaidThroughLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="PaymentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="SendReceipt" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="SpotLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="StartTimerButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="AddTime" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="NewPark" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="Settings" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NewParkViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewParkViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="editingDidBegin:"/>
+                <relationship kind="action" name="editingDidEnd:"/>
+                <relationship kind="outlet" name="Commit" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="LotPicker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="NumberBox" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="editingDidBegin:"/>
+                <relationship kind="action" name="editingDidEnd:"/>
+                <relationship kind="action" name="pressExpirationSelect:"/>
+                <relationship kind="action" name="pressLotSelect:"/>
+                <relationship kind="action" name="pressTypeSelect:"/>
+                <relationship kind="outlet" name="BillingField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="Commit" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="CvsField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="DateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="DefaultLotField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="EmailField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ExpirationPicker" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="ExpirationSelect" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="LotLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LotPicker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="LotSelect" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="NameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="NumberField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TypeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TypePicker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="TypeSelect" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="StartingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StartingViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ParkingLotImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="ToMain" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="vzu-2w-JTN"/>
-        <segue reference="F2U-bH-qeX"/>
+        <segue reference="iVE-0H-7Tg"/>
+        <segue reference="zCQ-z4-6xh"/>
     </inferredMetricsTieBreakers>
 </document>

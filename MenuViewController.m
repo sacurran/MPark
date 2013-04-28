@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 
+
 @interface MenuViewController ()
 
 @end
@@ -23,11 +24,19 @@
     }
     return self;
 }
+-(void) viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:YES];
     if([[Forwarding name] isEqualToString:@""])
     {
         _AddTime.hidden=true;

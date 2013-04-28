@@ -17,8 +17,7 @@
 [Parse setApplicationId:@"PUqDsM7dG0mc5qW7encJPSBpHWFOtY6XL3hFi71o"
 clientKey:@"tXYIjuLhbp3V4bIll4oWmMJWvhEik2iXZL0BR4ul"];
     return YES;
-}
-							
+}						
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

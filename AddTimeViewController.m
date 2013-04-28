@@ -16,6 +16,15 @@ static float pricePerMinute=1.4/60;
 
 @implementation AddTimeViewController
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+}
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     
@@ -29,7 +38,7 @@ static float pricePerMinute=1.4/60;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [self.navigationController setNavigationBarHidden:NO animated:NO];
     d=[[Database alloc] init];
     
     NSString * lotName=[Forwarding currentLot];
@@ -90,6 +99,7 @@ static float pricePerMinute=1.4/60;
     self.AmountOwedLabel.text=[formatter stringFromNumber:aO];
 
 }
+
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
     paidThrough=[paidThrough dateByAddingTimeInterval:timeAdded*60];
@@ -99,4 +109,6 @@ static float pricePerMinute=1.4/60;
     //Charge amount owed to credit card
     return YES;
 }
+
+
 @end
