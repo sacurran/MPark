@@ -16,7 +16,7 @@
 {
     // Override point for customization after application launch.
 [Parse setApplicationId:@"PUqDsM7dG0mc5qW7encJPSBpHWFOtY6XL3hFi71o" clientKey:@"tXYIjuLhbp3V4bIll4oWmMJWvhEik2iXZL0BR4ul"];
-    [GMSServices provideAPIKey:@"AIzaSyBTwwsj1hvDsvBzAzfbYMe1ctP8Xvk5gTw"];
+    [GMSServices provideAPIKey:@"AIzaSyAZq7u1c6Ebfe0zCuV-eaCoFl4DojBHcJE"];
     return YES;
 }						
 - (void)applicationWillResignActive:(UIApplication *)application
