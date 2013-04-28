@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+
 @interface StartingViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *ParkingLotImage;
 @property (weak, nonatomic) IBOutlet UIButton *ToMain;

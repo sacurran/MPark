@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Forwarding.h"
-@interface EmailSentViewController : UIViewController
+#import "SKPSMTPMessage.h"
+
+@interface EmailSentViewController : UIViewController<SKPSMTPMessageDelegate>
+{
+    NSTimer *aTimer;
+}
 @property (weak, nonatomic) IBOutlet UIButton *StartTimerButton;
 - (IBAction)startTimer:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *SendReceipt;

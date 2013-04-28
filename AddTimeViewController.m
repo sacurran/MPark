@@ -106,7 +106,7 @@ static float pricePerMinute=1.4/60;
     [d AddPayment:[Forwarding currentLot] andCurSpace:[Forwarding currentNumber] paidThrough:paidThrough];
     [Forwarding SetMoneyOwed:amountOwed];
     [Forwarding SetPaidThrough:paidThrough];
-    //Charge amount owed to credit card
+    [Forwarding ChargeCC];
     return YES;
 }
 

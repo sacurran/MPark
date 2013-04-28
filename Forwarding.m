@@ -139,8 +139,9 @@
 }
 
 
-- (void)ChargeCC{
++ (void)ChargeCC{
     //do something here
+    
 }
 
 @end

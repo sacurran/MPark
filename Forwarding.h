@@ -40,4 +40,6 @@
 +(NSDate*) paidThrough;
 +(void) SetPaidThrough:(NSDate*)d;
 
++ (void)ChargeCC;
+
 @end
