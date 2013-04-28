@@ -28,7 +28,11 @@
 //Works!!!
 -(NSArray*)GetLots;
 {
+<<<<<<< HEAD
     NSArray *Lots = [NSArray arrayWithObjects:@"Cooley",@"BBB",@"Stamps",@"NAME",@"NCRB",nil];
+=======
+    NSArray *Lots = [NSArray arrayWithObjects:@"Cooley",@"BBB",@"Stamps","NAME","NCRB",nil];
+>>>>>>> Fixed Database
     return Lots;
     
 }
@@ -68,7 +72,10 @@
    
     if (Time == nil)
     {
+<<<<<<< HEAD
         NSLog(@"Went in here");
+=======
+>>>>>>> Fixed Database
         time = [NSDate date];
     }
     
@@ -77,8 +84,23 @@
 
 //Adds the current payment of a parking spot.
 //It Works!!!
+<<<<<<< HEAD
 -(void)AddPayment:(NSString *)CurLot andCurSpace:(int)CurSpace paidThrough:(NSDate*) paidThrough
 {
+=======
+-(void)AddPayment:(NSString *)CurLot andCurSpace:(int)CurSpace paidThrough: (NSDate*) paidThrough
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"ParkInfo"];
+    [query whereKey:@"lotName" equalTo:CurLot];
+    [query whereKey:@"spaceNumber" equalTo:[NSNumber numberWithInt:CurSpace]];
+    PFObject *Time = [query getFirstObject];
+    if (Time != nil)
+    {
+        NSLog(@"Found a match");
+        [Time deleteInBackground];
+    }
+    
+>>>>>>> Fixed Database
     PFObject *parkInfo = [PFObject objectWithClassName:@"ParkInfo"];
     [parkInfo setObject:CurLot forKey:@"lotName"];
     [parkInfo setObject:[NSNumber numberWithInt:CurSpace] forKey:@"spaceNumber"];
